@@ -24,20 +24,22 @@ struct Website {
     }
 
     void displayInfo() const {
-        cout << "Website Name: " << name << endl;
-        cout << "Description: " << description << endl;
+        cout << "Назва сайту: " << name << endl;
+        cout << "Опис: " << description << endl;
         cout << "URL: " << URL << endl;
     }
 };
 
 int main() {
+    setlocale(LC_ALL, "uk_UA");
     Website site("https://example.com", "Example Site", "This is an example website.");
 
     string protocol;
     if (site.validateAndExtractProtocol(protocol)) {
-        cout << "Valid URL. Protocol: " << protocol << endl;
-    } else {
-        cout << "Invalid URL!" << endl;
+        cout << "Дійсний URL. Протокол: " << protocol << endl;
+    }
+    else {
+        cout << "Недійсний URL!" << endl;
     }
 
     site.displayInfo();
